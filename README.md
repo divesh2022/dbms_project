@@ -4,5 +4,4 @@ dbms_project repository showcases a comprehensive DBMS project with schema desig
 
 1. **Clone the repository**
    ```bash
-   
-git clone https://github.com/divesh2022/dbms_project.git
+   git clone https://github.com/divesh2022/dbms_project.git

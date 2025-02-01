@@ -1,5 +1,5 @@
--- this query is used display all the data in the database
-select * from students;
-select * from Course;
-select * from faculty;
-select * from Admin;
+select * from admin;
+select * from TransactionRecord;
+select * from student;
+select * from course;
+select * from Faculty;

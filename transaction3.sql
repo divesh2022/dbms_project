@@ -7,6 +7,18 @@ DECLARE @AdminPassword2 CHAR(8);
 SET @AdminLoginID2 = 'alice.johnson';
 SET @AdminPassword2 = 'pass1234';
 
+-- Variables for transaction record
+DECLARE @TransactionTimestamp DATETIME;
+DECLARE @TransactionID VARCHAR(50);
+DECLARE @TransactionStatus VARCHAR(10);
+DECLARE @AdminName VARCHAR(100);
+
+-- Assigning values to transaction record
+SET @TransactionTimestamp = GETDATE();
+SET @TransactionID = NEWID();
+SET @TransactionStatus = 'success';
+SET @AdminName = 'alice.johnson';
+
 -- Beginning transaction T2
 BEGIN TRANSACTION T2;
 
@@ -14,7 +26,7 @@ BEGIN TRANSACTION T2;
 IF EXISTS (SELECT 1 FROM Admin WHERE Login_ID = @AdminLoginID2 AND Password = @AdminPassword2)
 BEGIN
     -- Update new column with data values
-    UPDATE Students SET Name = 
+    UPDATE Student SET Name = 
     CASE Roll_No
         WHEN 1 THEN 'John Doe'
         WHEN 2 THEN 'Jane Smith'
@@ -33,6 +45,10 @@ BEGIN
         WHEN 15 THEN 'Alexander Young'
         ELSE 'Unnamed Student'
     END;
+        -- Insert transaction record
+    INSERT INTO TransactionRecord (s_no, timestamp, transaction_id, status, admin)
+    VALUES (1, @TransactionTimestamp, @TransactionID, @TransactionStatus, @AdminName);
+
 
     -- Commit transaction T2
     COMMIT TRANSACTION T2;

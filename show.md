@@ -1,0 +1,5 @@
+[admin_data.pdf](https://github.com/user-attachments/files/18652026/admin_data.pdf)
+[course_data.pdf](https://github.com/user-attachments/files/18652027/course_data.pdf)
+[faculty_data.pdf](https://github.com/user-attachments/files/18652028/faculty_data.pdf)
+[student_data.pdf](https://github.com/user-attachments/files/18652030/student_data.pdf)
+[transaction_record.pdf](https://github.com/user-attachments/files/18652032/transaction_record.pdf)
